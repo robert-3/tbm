@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employer.name %>
+</p>
+
+<h2>Employees</h2>
+<% for employee in @employer.employees %>
+  <ul>
+    <li><%= link_to employee.name, [@employer, employee] %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_employer_path(@employer) %> |
+<%= link_to 'View Employees', employer_employees_path(@employer) %> |
+<%= link_to 'Add Employee', new_employer_employee_path(@employer) %> |
+<%= link_to 'Back', employers_path %>
+
+<h2>Budgets</h2>
+<% for budget in @employer.budgets %>
+   <ul>
+     <li><%=link_to budget.name, [@employer, budget] %></li>
+   </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_employer_path(@employer) %> |
+<%= link_to 'View Budgets', employer_budgets_path(@employer) %> |
+<%= link_to 'Add Budget', new_employer_budget_path(@employer) %> |
+<%= link_to 'Back', employer_path %> |

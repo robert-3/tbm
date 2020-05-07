@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @budget.name %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @budget.hours %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @budget.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @budget.end_date %>
+</p>
+
+<p>
+  <strong>Employer:</strong>
+  <%= link_to @budget.employer.name, [@employer] %>
+</p>
+
+<%= link_to 'Edit', edit_employer_budget_path(@employer, @budget) %> |
+<%= link_to 'Back', employer_budgets_path(@employer) %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Employer:</strong>
+  <%= link_to @employee.employer.name, [@employer] %>
+</p>
+
+<%= link_to "edit", edit_employer_employee_path %>
+
+<h2>Timesheets</h2>
+<% for timesheet in @employee.timesheets %>
+   <ul>
+     <li><%= link_to timesheet.name, [@employee, timesheet] %></li>
+   </ul>
+<% end %>
+
+
+
+
+<%= link_to "Add Timesheet", new_employee_timesheet_path(@employee) %>
+
+

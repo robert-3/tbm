@@ -1,0 +1,6 @@
+<h1>Editing Timesheet</h1>
+
+<%= render 'form', timesheet: @timesheet %>
+
+<%= link_to 'Show', [@employee, @timesheet] %> |
+<%= link_to 'Back', employee_timesheets_path(@employee) %>
