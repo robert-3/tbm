@@ -22,16 +22,21 @@
   </div>
 
   <div class="field">
-    <%= form.label :hours %>
-    <%= form.number_field :hours, id: :timesheet_hours %>
+    <%= form.label :service_hours %>
+    <%= form.number_field :service_hours, id: :timesheet_service_hours %>
   </div>
 
   <div class="field">
     <%= form.label :date_of_service %>
     <%= form.date_select :date_of_service, id: :timesheet_date_of_service %>
   </div>
-
   
+  <div class="control-group">
+    <%= form.label :budget_id, class: 'control-label' %>
+    <div class="controls">
+       <%= collection_select( :timesheet, :budget_id, Budget.all, :id, :name, {}, { :multiple => false } ) %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

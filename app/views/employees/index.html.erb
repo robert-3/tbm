@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employees</h1>
+<h3>
+  Employer: <%= link_to @employer.name, employer_path(@employer) %>
+</h3>
+
+<h3>Employees</h3>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Employer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +18,7 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= link_to employee.name, [@employer, employee] %></td>
-        <td><%= link_to employee.employer.name, [@employer] %></td>
+        
         
         <td><%= link_to 'Edit Employee', edit_employer_employee_path(@employer, employee) %></td>
         <td><%= link_to 'Destroy Employee', [@employer, employee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employer_employee_path(@employer) %>
+<%= link_to 'Add Employee', new_employer_employee_path(@employer), class: "btn btn-outline-secondary" %>

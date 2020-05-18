@@ -1,6 +1,6 @@
-<h1>Editing Timesheet</h1>
+<h3>Editing Timesheet</h3>
 
 <%= render 'form', timesheet: @timesheet %>
 
-<%= link_to 'Show', [@employee, @timesheet] %> |
-<%= link_to 'Back', employee_timesheets_path(@employee) %>
+<%= link_to 'Show', [@employee, @timesheet], class: "btn btn-outline-secondary" %> 
+<%= link_to 'Back', employee_timesheets_path(@employee), class: "btn btn-outline-secondary" %>

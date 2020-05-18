@@ -1,6 +1,11 @@
 class Budget < ApplicationRecord
+  
+  
+  
   belongs_to :employer
+  has_many :timesheets
   validates :name, presence: true, uniqueness: true
+  validates :hours, presence: true
   validate :end_after_start
   validates :start_date, :end_date, presence: true
  

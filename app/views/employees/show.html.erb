@@ -1,27 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
+<h3>
+ Employer: <%= link_to @employee.employer.name, [@employer] %>
+</h3>
 
-<p>
-  <strong>Employer:</strong>
-  <%= link_to @employee.employer.name, [@employer] %>
-</p>
+<h3>
+ Employee: <%= @employee.name %>
+</h3>
 
-<%= link_to "edit", edit_employer_employee_path %>
-
-<h2>Timesheets</h2>
+<h3><%= link_to 'Timesheets', employee_timesheets_path(@employee) %></h3>
 <% for timesheet in @employee.timesheets %>
    <ul>
      <li><%= link_to timesheet.name, [@employee, timesheet] %></li>
    </ul>
 <% end %>
 
-
-
-
-<%= link_to "Add Timesheet", new_employee_timesheet_path(@employee) %>
+<%= link_to "Edit Employee", edit_employer_employee_path, class: "btn btn-outline-secondary" %>
+<%= link_to "Add Timesheet", new_employee_timesheet_path(@employee), class: "btn btn-outline-secondary" %>
 
 

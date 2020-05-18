@@ -1,6 +1,6 @@
-<h1>Editing Employee</h1>
+<h3>Editing Employee</h3>
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to 'Show', [@employer, @employee] %> |
-<%= link_to 'Back', employer_employees_path(@employer) %>
+<%= link_to 'Show', [@employer, @employee], class: "btn btn-outline-secondary" %> 
+<%= link_to 'Back', employer_employees_path(@employer), class: "btn btn-outline-secondary" %>

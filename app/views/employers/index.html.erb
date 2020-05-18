@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employers</h1>
+<h3>Employers</h3>
 
 <table>
   <thead>
@@ -14,8 +14,8 @@
     <% @employers.each do |employer| %>
       <tr>
         <td><%= link_to employer.name, employer %></td>
-        <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
-        <td><%= link_to 'Destroy', employer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Employer', edit_employer_path(employer) %></td> 
+        <td><%= link_to 'Destroy Employer', employer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Employer', new_employer_path %>
+<%= link_to '+ Employer', new_employer_path, class: "btn btn-outline-secondary" %>

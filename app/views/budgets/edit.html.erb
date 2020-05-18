@@ -1,6 +1,6 @@
-<h1>Editing Budget</h1>
+<h3>Editing Budget</h3>
 
 <%= render 'form', budget: @budget %>
 
-<%= link_to 'Show', [@employer, @budget] %> |
-<%= link_to 'Back', employer_budget_path(@employer) %>
+<%= link_to 'Show', [@employer, @budget], class: "btn btn-outline-secondary" %> 
+<%= link_to 'Back', employer_budget_path(@employer), class: "btn btn-outline-secondary" %>
